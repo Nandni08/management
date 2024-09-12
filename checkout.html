@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h3>Items</h3>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum reprehenderit sit vel odit porro, blanditiis consequatur nam fugiat vitae natus dolores, eos modi repellendus. Quis soluta iure obcaecati id voluptate nesciunt minus reiciendis! Commodi labore recusandae adipisci eius praesentium amet, odio exercitationem, illo ad voluptatum, earum quia at autem provident.</p>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const number = document.getElementById('number').value;
+        const paymentMethod = document.getElementById('payment-method').value;
+        const state = document.getElementById('state').value;
+        const pincode = document.getElementById('pincode').value;
+
+        // Create the message for the alert
+        const message = `
+            Order Confirmed!\n\n
+            Name: ${name}\n
+            Email Address: ${email}\n
+            Address: ${address}\n
+            City: ${city}\n
+            Phone Number: ${number}\n
+            Payment Method: ${paymentMethod}\n
+            State: ${state}\n
+            Pincode: ${pincode}\n\n
+            Thank you for your purchase! Click "OK" to continue shopping.
+        `;
+
+        // Display the alert
+        alert(message);
+
+        // Optionally, you could redirect to another page or reset the form here
+        // window.location.href = 'shopping.html'; // Redirect to a shopping page
+        // document.querySelector('.order-form').reset(); // Reset the form
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <h1>Order Now</h1>
+    <form class="order-form" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="number">Phone Number:</label>
+        <input type="tel" id="number" name="number" required>
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bank-transfer">Bank Transfer</option>
+            <option value="UPI">UPI</option>
+        </select>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <button type="submit">Order Now</button>
+    </form>
+</div>
+
+</body>
+</html>
